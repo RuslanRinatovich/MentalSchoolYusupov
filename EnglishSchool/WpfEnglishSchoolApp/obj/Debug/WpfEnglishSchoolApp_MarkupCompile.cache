@@ -1,0 +1,20 @@
+﻿WpfEnglishSchoolApp
+
+
+winexe
+C#
+.cs
+z:\ДИПЛОМ 2023\Юсупов\EnglishSchool\WpfEnglishSchoolApp\obj\Debug\
+WpfEnglishSchoolApp
+none
+false
+DEBUG;TRACE
+z:\ДИПЛОМ 2023\Юсупов\EnglishSchool\WpfEnglishSchoolApp\App.xaml
+26152279966
+2-1050322316
+531885304721
+29-364377295
+Dictionary1.xaml;Pages\AddGoodPage.xaml;Pages\AdditionalGoodsPage.xaml;Pages\AddServicePage.xaml;Pages\AddTrainerPage.xaml;Pages\AdminServicesPage.xaml;Pages\AllClientsPage.xaml;Pages\CatalogGoddsPage.xaml;Pages\ClientTypePage.xaml;Pages\DevelopersPage.xaml;Pages\GoodsPage.xaml;Pages\SellGoodsPage.xaml;Pages\ServicesPage.xaml;Pages\SpecialitiesPage.xaml;Pages\TimeTablePage.xaml;Pages\TrainersPage.xaml;Pages\VisitPage.xaml;Windows\ClientTypeWindow.xaml;Windows\ClientWindow.xaml;Windows\DeveloperWindow.xaml;Windows\MainWindow.xaml;Windows\LoginWindow.xaml;Windows\SellWindow.xaml;Windows\SpecialityWindow.xaml;Windows\TimeTableWindow.xaml;Windows\VisitWindow.xaml;
+
+False
+

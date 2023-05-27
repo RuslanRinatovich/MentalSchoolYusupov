@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище MentalSchoolBDModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="date" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DateOfRegistration" Type="date" Nullable="false" />
+    <Property Name="ClientTypeId" Type="int" />
+    <Property Name="RoleId" Type="int" />
+  </EntityType>
+  <EntityType Name="ClientType">
+    <Key>
+      <PropertyRef Name="ClientTypeId" />
+    </Key>
+    <Property Name="ClientTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientTypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Complect">
+    <Key>
+      <PropertyRef Name="ComplectId" />
+    </Key>
+    <Property Name="ComplectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MainGoodId" Type="int" Nullable="false" />
+    <Property Name="SecondGoodId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Developer">
+    <Key>
+      <PropertyRef Name="DeveloperId" />
+    </Key>
+    <Property Name="DeveloperId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeveloperName" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="WorkBeginDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Good">
+    <Key>
+      <PropertyRef Name="GoodId" />
+    </Key>
+    <Property Name="GoodId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="GoodName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="MainPhoto" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecondPhotos" Type="nvarchar(max)" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Weight" Type="float" />
+    <Property Name="Width" Type="float" />
+    <Property Name="Heigth" Type="float" />
+    <Property Name="Length" Type="float" />
+    <Property Name="DeveloperId" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Sell">
+    <Key>
+      <PropertyRef Name="SellId" />
+    </Key>
+    <Property Name="SellId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodId" Type="int" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+    <Property Name="DateSell" Type="datetime" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ServiceId" />
+    </Key>
+    <Property Name="ServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ServiceDescription" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="TimeLength" Type="int" Nullable="false" />
+    <Property Name="MainPhoto" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Discount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Speciality">
+    <Key>
+      <PropertyRef Name="SpecialityId" />
+    </Key>
+    <Property Name="SpecialityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SpecialityPay" Type="float" Nullable="false" />
+    <Property Name="SpecialityName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="StoreId" />
+    </Key>
+    <Property Name="StoreId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GoodId" Type="int" Nullable="false" />
+    <Property Name="Count" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TimeSheet">
+    <Key>
+      <PropertyRef Name="TimeSheetId" />
+    </Key>
+    <Property Name="TimeSheetId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkerId" Type="int" Nullable="false" />
+    <Property Name="ServiceId" Type="int" Nullable="false" />
+    <Property Name="ServiceTime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="DayWeek" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Visit">
+    <Key>
+      <PropertyRef Name="VisitId" />
+    </Key>
+    <Property Name="VisitId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ServiceId" Type="int" Nullable="false" />
+    <Property Name="Paid" Type="bit" />
+    <Property Name="Rewiew" Type="nvarchar" MaxLength="1000" />
+    <Property Name="DateActual" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Worker">
+    <Key>
+      <PropertyRef Name="WorkerId" />
+    </Key>
+    <Property Name="WorkerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Birthday" Type="date" Nullable="false" />
+    <Property Name="WorkExperience" Type="int" Nullable="false" />
+    <Property Name="Info" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkerSpec">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SpecialityId" Type="int" Nullable="false" />
+    <Property Name="WorkerId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Client_ClientType">
+    <End Role="ClientType" Type="Self.ClientType" Multiplicity="0..1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClientType">
+        <PropertyRef Name="ClientTypeId" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="ClientTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Complect_Good">
+    <End Role="Good" Type="Self.Good" Multiplicity="1" />
+    <End Role="Complect" Type="Self.Complect" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Good">
+        <PropertyRef Name="GoodId" />
+      </Principal>
+      <Dependent Role="Complect">
+        <PropertyRef Name="MainGoodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Complect_Good1">
+    <End Role="Good" Type="Self.Good" Multiplicity="1" />
+    <End Role="Complect" Type="Self.Complect" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Good">
+        <PropertyRef Name="GoodId" />
+      </Principal>
+      <Dependent Role="Complect">
+        <PropertyRef Name="SecondGoodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Good_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Good" Type="Self.Good" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Good">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Good_Developer">
+    <End Role="Developer" Type="Self.Developer" Multiplicity="1" />
+    <End Role="Good" Type="Self.Good" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Developer">
+        <PropertyRef Name="DeveloperId" />
+      </Principal>
+      <Dependent Role="Good">
+        <PropertyRef Name="DeveloperId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sell_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="Sell" Type="Self.Sell" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="Sell">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sell_Good">
+    <End Role="Good" Type="Self.Good" Multiplicity="1" />
+    <End Role="Sell" Type="Self.Sell" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Good">
+        <PropertyRef Name="GoodId" />
+      </Principal>
+      <Dependent Role="Sell">
+        <PropertyRef Name="GoodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_Good">
+    <End Role="Good" Type="Self.Good" Multiplicity="1" />
+    <End Role="Store" Type="Self.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Good">
+        <PropertyRef Name="GoodId" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="GoodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TimeSheet_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="TimeSheet" Type="Self.TimeSheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="ServiceId" />
+      </Principal>
+      <Dependent Role="TimeSheet">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TimeSheet_Worker">
+    <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+    <End Role="TimeSheet" Type="Self.TimeSheet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Worker">
+        <PropertyRef Name="WorkerId" />
+      </Principal>
+      <Dependent Role="TimeSheet">
+        <PropertyRef Name="WorkerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visit_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Visit" Type="Self.Visit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="Visit">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visit_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="Visit" Type="Self.Visit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="ServiceId" />
+      </Principal>
+      <Dependent Role="Visit">
+        <PropertyRef Name="ServiceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkerSpec_Speciality">
+    <End Role="Speciality" Type="Self.Speciality" Multiplicity="1" />
+    <End Role="WorkerSpec" Type="Self.WorkerSpec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Speciality">
+        <PropertyRef Name="SpecialityId" />
+      </Principal>
+      <Dependent Role="WorkerSpec">
+        <PropertyRef Name="SpecialityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkerSpec_Worker">
+    <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+    <End Role="WorkerSpec" Type="Self.WorkerSpec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Worker">
+        <PropertyRef Name="WorkerId" />
+      </Principal>
+      <Dependent Role="WorkerSpec">
+        <PropertyRef Name="WorkerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище MentalSchoolBDModelContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClientType" EntityType="Self.ClientType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Complect" EntityType="Self.Complect" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Developer" EntityType="Self.Developer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Good" EntityType="Self.Good" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sell" EntityType="Self.Sell" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Speciality" EntityType="Self.Speciality" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TimeSheet" EntityType="Self.TimeSheet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Visit" EntityType="Self.Visit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Worker" EntityType="Self.Worker" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkerSpec" EntityType="Self.WorkerSpec" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Client_ClientType" Association="Self.FK_Client_ClientType">
+      <End Role="ClientType" EntitySet="ClientType" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Role" Association="Self.FK_Client_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Complect_Good" Association="Self.FK_Complect_Good">
+      <End Role="Good" EntitySet="Good" />
+      <End Role="Complect" EntitySet="Complect" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Complect_Good1" Association="Self.FK_Complect_Good1">
+      <End Role="Good" EntitySet="Good" />
+      <End Role="Complect" EntitySet="Complect" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Good_Category" Association="Self.FK_Good_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Good" EntitySet="Good" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Good_Developer" Association="Self.FK_Good_Developer">
+      <End Role="Developer" EntitySet="Developer" />
+      <End Role="Good" EntitySet="Good" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sell_Client" Association="Self.FK_Sell_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Sell" EntitySet="Sell" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sell_Good" Association="Self.FK_Sell_Good">
+      <End Role="Good" EntitySet="Good" />
+      <End Role="Sell" EntitySet="Sell" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_Good" Association="Self.FK_Store_Good">
+      <End Role="Good" EntitySet="Good" />
+      <End Role="Store" EntitySet="Store" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TimeSheet_Service" Association="Self.FK_TimeSheet_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="TimeSheet" EntitySet="TimeSheet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TimeSheet_Worker" Association="Self.FK_TimeSheet_Worker">
+      <End Role="Worker" EntitySet="Worker" />
+      <End Role="TimeSheet" EntitySet="TimeSheet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visit_Client" Association="Self.FK_Visit_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Visit" EntitySet="Visit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visit_Service" Association="Self.FK_Visit_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="Visit" EntitySet="Visit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkerSpec_Speciality" Association="Self.FK_WorkerSpec_Speciality">
+      <End Role="Speciality" EntitySet="Speciality" />
+      <End Role="WorkerSpec" EntitySet="WorkerSpec" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkerSpec_Worker" Association="Self.FK_WorkerSpec_Worker">
+      <End Role="Worker" EntitySet="Worker" />
+      <End Role="WorkerSpec" EntitySet="WorkerSpec" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

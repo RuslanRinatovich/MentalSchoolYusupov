@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище MentalSchoolBDModelContainer" CdmEntityContainer="EnglishSchoolABCEntities">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="MentalSchoolBDModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="MentalSchoolBDModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DateOfRegistration" ColumnName="DateOfRegistration" />
+          <ScalarProperty Name="ClientTypeId" ColumnName="ClientTypeId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientTypes">
+      <EntityTypeMapping TypeName="MentalSchoolBDModel.ClientType">
+        <MappingFragment StoreEntitySet="ClientType">
+          <ScalarProperty Name="ClientTypeId" ColumnName="ClientTypeId" />
+          <ScalarProperty Name="ClientTypeName" ColumnName="ClientTypeName" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Complects">
+      <EntityTypeMapping TypeName="MentalSchoolBDModel.Complect">
+        <MappingFragment StoreEntitySet="Complect">
+          <ScalarProperty Name="ComplectId" ColumnName="ComplectId" />
+          <ScalarProperty Name="MainGoodId" ColumnName="MainGoodId" />
+          <ScalarProperty Name="SecondGoodId" ColumnName="SecondGoodId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Developers">
+      <EntityTypeMapping TypeName="MentalSchoolBDModel.Developer">
+        <MappingFragment StoreEntitySet="Developer">
+          <ScalarProperty Name="DeveloperId" ColumnName="DeveloperId" />
+          <ScalarProperty Name="DeveloperName" ColumnName="DeveloperName" />
+          <ScalarProperty Name="WorkBeginDate" ColumnName="WorkBeginDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Goods">
+      <EntityTypeMapping TypeName="MentalSchoolBDModel.Good">
+        <MappingFragment StoreEntitySet="Good">
+          <ScalarProperty Name="GoodId" ColumnName="GoodId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="GoodName" ColumnName="GoodName" />
+          <ScalarProperty Name="MainPhoto" ColumnName="MainPhoto" />
+          <ScalarProperty Name="SecondPhotos" ColumnName="SecondPhotos" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Heigth" ColumnName="Heigth" />
+          <ScalarProperty Name="Length" ColumnName="Length" />
+          <ScalarProperty Name="DeveloperId" ColumnName="DeveloperId" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="MentalSchoolBDModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sells">
+      <EntityTypeMapping TypeName="MentalSchoolBDModel.Sell">
+        <MappingFragment StoreEntitySet="Sell">
+          <ScalarProperty Name="SellId" ColumnName="SellId" />
+          <ScalarProperty Name="GoodId" ColumnName="GoodId" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="DateSell" ColumnName="DateSell" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="MentalSchoolBDModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="ServiceDescription" ColumnName="ServiceDescription" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="TimeLength" ColumnName="TimeLength" />
+          <ScalarProperty Name="MainPhoto" ColumnName="MainPhoto" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Specialities">
+      <EntityTypeMapping TypeName="MentalSchoolBDModel.Speciality">
+        <MappingFragment StoreEntitySet="Speciality">
+          <ScalarProperty Name="SpecialityId" ColumnName="SpecialityId" />
+          <ScalarProperty Name="SpecialityPay" ColumnName="SpecialityPay" />
+          <ScalarProperty Name="SpecialityName" ColumnName="SpecialityName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stores">
+      <EntityTypeMapping TypeName="MentalSchoolBDModel.Store">
+        <MappingFragment StoreEntitySet="Store">
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="GoodId" ColumnName="GoodId" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeSheets">
+      <EntityTypeMapping TypeName="MentalSchoolBDModel.TimeSheet">
+        <MappingFragment StoreEntitySet="TimeSheet">
+          <ScalarProperty Name="TimeSheetId" ColumnName="TimeSheetId" />
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="ServiceTime" ColumnName="ServiceTime" />
+          <ScalarProperty Name="DayWeek" ColumnName="DayWeek" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visits">
+      <EntityTypeMapping TypeName="MentalSchoolBDModel.Visit">
+        <MappingFragment StoreEntitySet="Visit">
+          <ScalarProperty Name="VisitId" ColumnName="VisitId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="Rewiew" ColumnName="Rewiew" />
+          <ScalarProperty Name="DateActual" ColumnName="DateActual" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workers">
+      <EntityTypeMapping TypeName="MentalSchoolBDModel.Worker">
+        <MappingFragment StoreEntitySet="Worker">
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="WorkExperience" ColumnName="WorkExperience" />
+          <ScalarProperty Name="Info" ColumnName="Info" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkerSpecs">
+      <EntityTypeMapping TypeName="MentalSchoolBDModel.WorkerSpec">
+        <MappingFragment StoreEntitySet="WorkerSpec">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SpecialityId" ColumnName="SpecialityId" />
+          <ScalarProperty Name="WorkerId" ColumnName="WorkerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
